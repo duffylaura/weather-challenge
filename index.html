@@ -17,7 +17,7 @@
     <div class = "container-fluid row">
         <div class = "container-fluid col-3 bg-light">
             <!-- Search for a city form input & search button-->
-            
+            <br>
             <form class = "text-center"> 
                 <label> <h3> Search for a city:</h3> </label>
                 <input type = "text" id="input" placeholder = "New York" > <br><br>
@@ -26,8 +26,8 @@
             
             <!-- Local storage container; generates buttons for past searches -->
             <div class = "container-fluid text-center">
-                <h3> Previous Searches: </h3>
-                <ul class = "list-unstyled" id="previousSearches">
+                <h3> Previous Searches: </h3> <br>
+                <ul class = "list-unstyled" id="storage">
                     <!-- Placeholder buttons; will dynamically create in JS-->
                     <li> <button type="button" class="btn btn-info" id="searchBtn" > New York </button> </li> <br>
                     <li> <button type="button" class="btn btn-info" id="searchBtn" > Seattle </button> </li> <br>
@@ -59,37 +59,47 @@
                 <div class="row">
                     <!-- Day 1 -->
                     <div class="card col-sm border-info mb-3">
-                        <h5 class="card-header">Featured</h5>
+                        <h5 class="card-header" id="day1">Featured</h5>
                         <div class="card-body text-info">
-                          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            <ul class = "card-text" id="forecast1">
+                                <li> With supporting text below as a natural lead-in to additional content.</li>
+                            </ul>
                         </div>
                     </div>
                     <!-- Day 2 -->
                     <div class="card col-sm border-info mb-3">
-                        <h5 class="card-header">Featured</h5>
+                        <h5 class="card-header" id="day2">Featured</h5>
                         <div class="card-body text-info">
-                          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            <ul class = "card-text" id="forecast2" >
+                                <li> With supporting text below as a natural lead-in to additional content.</li>
+                            </ul>
                         </div>
                     </div>
                     <!-- Day 3-->
                     <div class="card col-sm border-info mb-3">
-                        <h5 class="card-header">Featured</h5>
+                        <h5 class="card-header" id="day3">Featured</h5>
                         <div class="card-body text-info">
-                          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            <ul class = "card-text" id="forecast3" >
+                                <li> With supporting text below as a natural lead-in to additional content.</li>
+                            </ul>
                         </div>
                     </div>
                     <!-- Day 4 -->
                     <div class="card col-sm border-info mb-3">
-                        <h5 class="card-header">Featured</h5>
+                        <h5 class="card-header" id="day4">Featured</h5>
                         <div class="card-body text-info">
-                          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            <ul class = "card-text"  id="forecast4">
+                                <li> With supporting text below as a natural lead-in to additional content.</li>
+                            </ul>
                         </div>
                     </div>
                     <!-- Day 5-->
                     <div class="card col-sm border-info mb-3">
-                        <h5 class="card-header">Featured</h5>
+                        <h5 class="card-header" id="day5">Featured</h5>
                         <div class="card-body text-info">
-                          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            <ul class = "card-text"  id="forecast5">
+                                <li> With supporting text below as a natural lead-in to additional content.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
