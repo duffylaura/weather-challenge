@@ -58,11 +58,28 @@ function weatherNow (latitude, longitude) {
 
 var cityName = document.querySelector('#cityName');
 var todayForecast = document.querySelector('#todayForecast');
+var todayForecastImage = document.querySelector('#todayForecastImage');
 
 function generateWeatherNow(city, temp, humidity, wind, iconLink){
-    var heading = document.createElement('h1');
+    var heading = document.createElement('h5');
     heading.textContent = city; 
     cityName.appendChild(heading);
+
+    var tempItem = document.createElement('li'); 
+    tempItem.textContent = "Temperature: "+temp+"°F"; 
+    todayForecast.appendChild(tempItem);
+
+    var humidityItem = document.createElement('li'); 
+    humidityItem.textContent = "Humidity: "+humidity+"%";
+    todayForecast.appendChild(humidityItem);
+
+    var windItem = document.createElement('li');
+    windItem.textContent = "Wind: "+wind+"mph";
+    todayForecast.appendChild(windItem);
+
+    var img = document.createElement('img');
+    img.src = iconLink; 
+    todayForecastImage.appendChild(img);
 };
 
 
