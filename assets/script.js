@@ -48,12 +48,39 @@ function weatherNow (latitude, longitude) {
             var iconTag = data.weather[0].icon; 
             var iconLink = "https://openweathermap.org/img/wn/" + iconTag + "@2x.png";
 
+            generateStorage(city);
             generateWeatherNow (city, temp, humidity, wind, iconLink);
         })}
     else {alert("Error")}
     })
     .catch(function(err){ alert("Error: "+err)})
 };
+
+var storage = document.querySelector('#storage'); 
+var searchedCityNames = []; 
+
+
+function generateStorage(city){
+    var cityStorage = JSON.parse(localStorage.getItem('storage')) || [];
+    console.log(cityStorage);
+    cityStorage.push(city);  
+    localStorage.setItem ('storage', JSON.stringify(cityStorage));
+
+    generateSavedSearchButtons(cityStorage); 
+}
+
+function generateSavedSearchButtons (cityStorage) {
+    if (storage !== null) {
+        for (var i=0; i < cityStorage.length; i++) {
+            var button = document.createElement('button');
+            button.classList.add("storageButton");
+            button.textContent = cityStorage[i]; 
+            button.onclick = "window.location.href='https://w3docs.com";
+            storage.appendChild(button);
+        }
+    }
+}
+
 
 var cityName = document.querySelector('#cityName');
 var todayForecast = document.querySelector('#todayForecast');
