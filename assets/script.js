@@ -8,7 +8,7 @@ searchBtnEl.addEventListener ("click", function(event){
 
 //access geocode API based on user input 
 function accessAPI (input) {
-    var apiURL = 'http://api.openweathermap.org/geo/1.0/direct?q='+input+'&appid=31c7e1b3bd169805a458edfc303e0b06';
+    var apiURL = 'https://api.openweathermap.org/geo/1.0/direct?q='+input+'&appid=31c7e1b3bd169805a458edfc303e0b06';
     fetch(apiURL)
     .then (function (response){
         if (response.ok) {
@@ -70,12 +70,14 @@ function generateStorage(city){
 }
 
 function generateSavedSearchButtons (cityStorage) {
-    if (storage !== null) {
+    if (cityStorage !== null) {
         for (var i=0; i < cityStorage.length; i++) {
             var button = document.createElement('button');
             button.classList.add("storageButton");
             button.textContent = cityStorage[i]; 
-            button.onclick = "window.location.href='https://w3docs.com";
+            button.onclick = function(){
+                location.assign("https://www.w3schools.com");
+            };
             storage.appendChild(button);
         }
     }
@@ -111,7 +113,7 @@ function generateWeatherNow(city, temp, humidity, wind, iconLink){
 
 // Get the weather using forecast api for five day forecast
 function weatherLater (latitude, longitude) {
-    var apiURL = 'http://api.openweathermap.org/data/2.5/forecast?lat='+latitude+'&lon='+longitude+'&appid=31c7e1b3bd169805a458edfc303e0b06';
+    var apiURL = 'https://api.openweathermap.org/data/2.5/forecast?lat='+latitude+'&lon='+longitude+'&appid=31c7e1b3bd169805a458edfc303e0b06';
     fetch (apiURL)
     .then (function(response){
         if(response.ok) {
