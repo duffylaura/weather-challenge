@@ -75,11 +75,21 @@ function generateSavedSearchButtons (cityStorage) {
             var button = document.createElement('button');
             button.classList.add("storageButton");
             button.textContent = cityStorage[i]; 
-            button.onclick = function(){
-                location.assign("https://www.w3schools.com");
-            };
+            // button.onclick = function(){
+            // //     location.assign("https://duffylaura.github.io/weather-challenge/");
+            // // };
+
+            // accessAPI(cityStorage[i].value); 
             storage.appendChild(button);
-        }
+        };
+
+        $('.storageButton').on('click', function () {
+            var index = $('.storageButton').index(this);
+            var input = $('.storageButton');
+            var value = input.eq(index).val();
+            console.log(value)
+            accessAPI(value);
+        });
     }
 }
 
