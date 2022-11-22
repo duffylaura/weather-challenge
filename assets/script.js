@@ -69,33 +69,19 @@ function generateStorage(city){
     generateSavedSearchButtons(cityStorage); 
 }
 
-// query selector for an id
-//click listener to the list (stored them in an ul, when something is clicked, take the text content, run)
-// checks to see what was clicked 
-// pulls its text content to run the function again 
-
-//Might want to have an if statement to remove duplicates in history 
-
 $(storage).on ('click', function(event) { //event listener; already on the page; listening on the whole div; only will do something if click on something in the div with a text content 
     var x = event.target.textContent; 
     accessAPI(x);
 });
 
 function generateSavedSearchButtons (cityStorage) {
-   // if (cityStorage !== null) {
         for (var i=0; i < cityStorage.length; i++) {
             var button = document.createElement('button');
             button.classList.add("storageButton");
             button.textContent = cityStorage[i]; 
-          //  button.onclick = accessAPI(cityStorage[i]);
-           
-        //    function(){
-        //         location.assign("https://duffylaura.github.io/weather-challenge/");
-        //     }; 
             storage.appendChild(button);
         };
-    }
-// }
+}
 
 
 var cityName = document.querySelector('#cityName');
