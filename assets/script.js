@@ -42,7 +42,7 @@ function weatherNow (latitude, longitude) {
     if(response.ok){
         response.json().then(function(data){
             var city = data.name; 
-            var temp = Math.round(((data.main.temp)-273.15)*(9/5)+32); //convert temp from K to F, round to nearest integer
+            var temp = Math.round(((data.main.temp)-273.15)*(1.8)+32); //convert temp from K to F, round to nearest integer
             var humidity = data.main.humidity; // measured as a %
             var wind = data.wind.speed; // measured in mph
             var iconTag = data.weather[0].icon; 
@@ -70,6 +70,8 @@ function generateStorage(city){
 }
 
 $(storage).on ('click', function(event) { //event listener; already on the page; listening on the whole div; only will do something if click on something in the div with a text content 
+    event.preventDefault(); 
+    clearContent(); 
     var x = event.target.textContent; 
     accessAPI(x);
 });
@@ -82,7 +84,6 @@ function generateSavedSearchButtons (cityStorage) {
             storage.appendChild(button);
         };
 }
-
 
 var cityName = document.querySelector('#cityName');
 var todayForecast = document.querySelector('#todayForecast');
@@ -317,4 +318,26 @@ function generateWeatherLater (temp1, temp2, temp3, temp4, temp5, wind1, wind2, 
     img5.src = link5; 
     image5.appendChild(img5);
 
+}
+
+function clearContent() {
+    cityName.innerHTML = "";
+    todayForecast.innerHTML = "";
+    todayForecastImage.innerHTML = "";
+    header1.innerHTML = "";
+    ul1.innerHTML=""; 
+    image1.innerHTML=""; 
+    header2.innerHTML = "";
+    ul2.innerHTML=""; 
+    image2.innerHTML=""; 
+    header3.innerHTML = "";
+    ul3.innerHTML=""; 
+    image3.innerHTML=""; 
+    header4.innerHTML = "";
+    ul4.innerHTML=""; 
+    image4.innerHTML=""; 
+    header5.innerHTML = "";
+    ul5.innerHTML=""; 
+    image5.innerHTML=""; 
+    storage.innerHTML="";
 }
